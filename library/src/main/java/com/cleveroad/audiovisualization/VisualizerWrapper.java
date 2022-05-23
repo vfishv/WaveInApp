@@ -3,7 +3,7 @@ package com.cleveroad.audiovisualization;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.cleveroad.audiovisualization.utils.TunnelPlayerWorkaround;
 

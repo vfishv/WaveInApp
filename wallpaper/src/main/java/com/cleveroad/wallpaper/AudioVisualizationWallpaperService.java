@@ -8,16 +8,13 @@ import android.graphics.Color;
 import android.opengl.GLSurfaceView;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
-import android.support.v4.app.ActivityCompat;
-import android.util.Log;
+import androidx.core.app.ActivityCompat;
+
 import android.view.SurfaceHolder;
 import android.widget.Toast;
 
 import com.cleveroad.audiovisualization.DbmHandler;
 import com.cleveroad.audiovisualization.GLAudioVisualizationView;
-
-import java.lang.reflect.Field;
-import java.util.Arrays;
 
 /**
  * Wallpaper service implementation.

@@ -1,6 +1,6 @@
 package com.cleveroad.audiovisualization;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Inner audio visualization interface.

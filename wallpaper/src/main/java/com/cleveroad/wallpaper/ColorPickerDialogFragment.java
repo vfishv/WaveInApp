@@ -3,9 +3,9 @@ package com.cleveroad.wallpaper;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
+import androidx.annotation.ColorInt;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,7 @@ import android.widget.Button;
 import com.larswerkman.holocolorpicker.ColorPicker;
 import com.larswerkman.holocolorpicker.SVBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -24,11 +24,11 @@ public class ColorPickerDialogFragment extends DialogFragment {
 
     public static final String KEY_INDEX = "INDEX";
     public static final String KEY_COLOR = "COLOR";
-    @Bind(R.id.picker)
+    @BindView(R.id.picker)
     ColorPicker colorPicker;
-    @Bind(R.id.svbar)
+    @BindView(R.id.svbar)
     SVBar svBar;
-    @Bind(R.id.btn_save)
+    @BindView(R.id.btn_save)
     Button btnSave;
 
     public static ColorPickerDialogFragment instance(int index, @ColorInt int color) {

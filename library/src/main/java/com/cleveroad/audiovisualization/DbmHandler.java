@@ -4,8 +4,8 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
 import android.speech.SpeechRecognizer;
-import android.support.annotation.CallSuper;
-import android.support.annotation.NonNull;
+import androidx.annotation.CallSuper;
+import androidx.annotation.NonNull;
 
 import java.util.Timer;
 import java.util.TimerTask;

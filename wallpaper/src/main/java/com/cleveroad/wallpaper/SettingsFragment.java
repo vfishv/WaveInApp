@@ -7,8 +7,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,8 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Settings fragment
@@ -29,7 +27,6 @@ public class SettingsFragment extends Fragment {
     static final String KEY_COLOR_3 = "COLOR_3";
     static final String KEY_COLOR_4 = "COLOR_4";
     static final String KEY_COLOR_5 = "COLOR_5";
-    @Bind({R.id.view_1, R.id.view_2, R.id.view_3, R.id.view_4, R.id.view_5})
     View[] views;
     private SharedPreferences preferences;
 
@@ -48,7 +45,13 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
-        ButterKnife.bind(this, view);
+        views = new View[]{
+                view.findViewById(R.id.view_1),
+                view.findViewById(R.id.view_2),
+                view.findViewById(R.id.view_3),
+                view.findViewById(R.id.view_4),
+                view.findViewById(R.id.view_5),
+        };
         return view;
     }
 
