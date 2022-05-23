@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 31
+    //buildToolsVersion "31.0.0"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0.0"
     }
@@ -23,9 +23,9 @@ android {
 dependencies {
     final SUPPORT_LIB_VERSION = '28.0.0'
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleDependency
-    compile "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
 }
 
-apply from: './gradle-mvn-push.gradle'
+//apply from: './gradle-mvn-push.gradle'

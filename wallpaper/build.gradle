@@ -12,7 +12,7 @@ android {
         versionName "1.0.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+//        android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
     }
     buildTypes {
         release {
@@ -27,12 +27,12 @@ dependencies {
     final COLOR_PICKER_VERSION = '1.5'
     final BUTTER_KNIFE_VERSION = '7.0.1'
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //noinspection GradleCompatible
-    compile "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
-    compile "com.larswerkman:HoloColorPicker:$COLOR_PICKER_VERSION"
-    compile "com.jakewharton:butterknife:$BUTTER_KNIFE_VERSION"
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
+    implementation "com.larswerkman:HoloColorPicker:$COLOR_PICKER_VERSION"
+    implementation "com.jakewharton:butterknife:$BUTTER_KNIFE_VERSION"
 
-    compile project(':library')
+    implementation project(':library')
 }
