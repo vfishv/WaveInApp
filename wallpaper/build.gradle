@@ -24,14 +24,14 @@ android {
 
 dependencies {
     final COLOR_PICKER_VERSION = '1.5'
-    final BUTTER_KNIFE_VERSION = '10.2.3'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //noinspection GradleCompatible
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation "com.larswerkman:HoloColorPicker:$COLOR_PICKER_VERSION"
-    implementation "com.jakewharton:butterknife:$BUTTER_KNIFE_VERSION"
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     implementation project(':library')
 }
