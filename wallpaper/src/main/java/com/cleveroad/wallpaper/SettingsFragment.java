@@ -1,6 +1,8 @@
 package com.cleveroad.wallpaper;
 
 import android.app.Activity;
+import android.app.WallpaperManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -122,6 +124,20 @@ public class SettingsFragment extends Fragment {
                     .putInt(KEY_COLOR_5, ((ColorDrawable) views[4].getBackground()).getColor())
                     .apply();
             getActivity().finish();
+            try {
+                startActivity(new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER)
+                        .putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+                                new ComponentName(getContext(), AudioVisualizationWallpaperService.class))
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            } catch (Exception e) {
+                try {
+                    startActivity(new Intent(WallpaperManager.ACTION_LIVE_WALLPAPER_CHOOSER)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                } catch (Exception e2) {
+                    //Toast.makeText(getContext(), R.string.error_wallpaper_chooser, Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);
